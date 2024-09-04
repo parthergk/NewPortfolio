@@ -11,6 +11,7 @@ module.exports = {
         "bg-main": "#353535",
       },
       fontSize: {
+        'md': '16px',
         "3.2xl": "32px",
         "3.4xl": "34px",
         "3.6xl": "36px",
