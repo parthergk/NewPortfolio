@@ -7,8 +7,12 @@ module.exports = {
   ],
   theme: {
     extend: {
+      fill: {
+        'custom-gray': 'rgb(41, 41, 41)', // Add your custom fill color
+      },
       backgroundColor: {
         "bg-main": "#353535",
+        'custom-gray': 'rgb(41, 41, 41)',
       },
       fontSize: {
         'md': '16px',
