@@ -21,8 +21,8 @@ module.exports = {
         "3.6xl": "36px",
         "3.8xl": "38px",
         "4.0": "40px",
-        "5.4xl": "54px"
-
+        "5.4xl": "54px",
+        'responsive-h1': 'clamp(148px, 12vw, 162px)',
       },
     },
   },

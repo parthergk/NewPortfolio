@@ -26,7 +26,7 @@ export default function RootLayout({ children }) {
           rel="stylesheet"
         />
       </head>
-      <body className={`${playfairDisplay.className }  bg-bg-main`}>
+      <body className={`${playfairDisplay.className }  bg-bg-main overflow-auto no-scrollbar`}>
         {/* Use a wrapper div to apply global styles if needed */}
           {children}
         {/* Add analytics script if needed */}

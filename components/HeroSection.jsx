@@ -48,8 +48,8 @@ export default function HeroSection({ offset = 600 }) {
           className=" object-contain w-auto "
         />
       </motion.div>
-        <div className="fixed left-0 right-0 bottom-20 w-full m-auto flex">
-          <h1 className=" text-[10vw] block m-auto">
+        <div className="fixed left-0 right-0  bottom-12 w-full m-auto flex">
+          <h1 className="  text-responsive-h1 block m-auto ml-[450px]">
             Creative
           </h1>
         </div>
