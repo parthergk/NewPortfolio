@@ -11,7 +11,7 @@ module.exports = {
         'custom-gray': 'rgb(41, 41, 41)', // Add your custom fill color
       },
       backgroundColor: {
-        "bg-main": "#353535",
+        "main": "#343434",
         'custom-gray': 'rgb(41, 41, 41)',
       },
       fontSize: {
@@ -23,6 +23,7 @@ module.exports = {
         "4.0": "40px",
         "5.4xl": "54px",
         'responsive-h1': 'clamp(148px, 12vw, 162px)',
+        'responsive-span': 'clamp(48px, 5vw, 54px)',
       },
     },
   },

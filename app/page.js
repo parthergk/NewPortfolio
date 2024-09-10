@@ -68,23 +68,23 @@ export default function Home() {
       {/* <div className = ' w-full m-auto block'>
               <h1 className = 'fixed left-[500px] bottom-20 text-9xl block m-auto w-full'>Creative</h1>
             </div> */}
-    <section id="home" className="h-screen bg-[#353535] flex justify-center items-center">
-        <h1 className="text-5xl">Home</h1>
+    <section id="home" className="h-screen bg-main flex justify-center items-center">
+        {/* <h1 className="text-5xl">Home</h1> */}
       </section>
 
-    <section id="project" className="h-screen  bg-[#353535] flex justify-center items-center">
+    <section id="project" className="h-screen  bg-[#343434] flex justify-start items-center">
         <h1 className="text-5xl">Project Section</h1>
       </section>
       
-      <section id="service" className="h-screen  bg-[#353535] flex justify-center items-center">
+      <section id="service" className="h-screen  bg-[#343434] flex justify-center items-center">
         <h1 className="text-5xl">Service Section</h1>
       </section>
 
-      <section id="about" className="h-screen  bg-[#353535] flex justify-center items-center">
+      <section id="about" className="h-screen  bg-[#343434] flex justify-center items-center">
         <h1 className="text-5xl">About Section</h1>
       </section>
 
-      <section id="contact" className="h-screen  bg-[#353535] flex justify-center items-center">
+      <section id="contact" className="h-screen  bg-[#343434] flex justify-center items-center">
         <h1 className="text-5xl">Contact Section</h1>
       </section>
     </>

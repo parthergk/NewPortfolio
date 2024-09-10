@@ -28,7 +28,7 @@ const Nav = memo(({ isMobile, setIsActive }) => {
       exit={isMobile ? "exit" : undefined}
       className="bg-custom-gray sm:bg-transparent sm:relative sm:flex-none fixed top-0 left-0 right-0 bottom-0 flex justify-center items-center z-10"
     >
-      <ul className="sm:flex sm:space-x-5 text-white text-5.4xl sm:text-3.2xl lg:text-3.8xl font-light">
+      <ul className="sm:flex sm:space-x-5 text-white text-5.4xl sm:text-3.2xl lg:text-3.6xl font-normal">
         {["Project", "Service", "About"].map((item) => (
           <li key={item}>
             <Link href={`#${item}`} onClick={(e) => handleScroll(e, item)}>

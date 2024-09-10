@@ -1,8 +1,10 @@
-import { Playfair_Display } from "next/font/google";
+// import { Playfair_Display } from "next/font/google";
+import { Cormorant_Garamond } from "next/font/google";
 import "./globals.css";
 
 // Import Playfair Display font with appropriate subsets
-const playfairDisplay = Playfair_Display({ subsets: ["latin"] });
+// const playfairDisplay = Playfair_Display({ subsets: ["latin"] });
+const cormorantgaramond = Cormorant_Garamond({ subsets: ["latin"],weight: ["300", "400", "500", "600", "700"] });
 
 export const metadata = {
   title: "Gaurav Kumar's Portfolio",
@@ -21,12 +23,16 @@ export default function RootLayout({ children }) {
         {/* Preconnect to Google's fonts to improve load performance */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin='true' />
-        <link
+        {/* <link
           href={`https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap`}
+          rel="stylesheet"
+        /> */}
+        <link
+          href={`https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&display=swap`}
           rel="stylesheet"
         />
       </head>
-      <body className={`${playfairDisplay.className }  bg-bg-main overflow-auto no-scrollbar`}>
+      <body className={`${cormorantgaramond.className }  bg-main overflow-auto no-scrollbar`}>
         {/* Use a wrapper div to apply global styles if needed */}
           {children}
         {/* Add analytics script if needed */}
