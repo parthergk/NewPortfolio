@@ -41,3 +41,15 @@ body {
 .no-scrollbar {
   -ms-overflow-style: none;  /* IE and Edge */
 }
+
+@layer components {
+  .custom-margin {
+    margin-left: calc(155px + (1024px + 100vw) * 0.3);
+  }  
+
+  @media (min-width: 768px) and (max-width: 1024px) {
+    .custom-margin {
+      margin-left: calc(38px + (1024px + 100vw) * 0.3); /* Adjusted for md screens */
+    }
+  }
+}

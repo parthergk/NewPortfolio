@@ -3,7 +3,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import Image from "next/image";
 import heroImage from "../public/img.png"; // Ensure image is in the public folder
 
-export default function HeroSection({ offset = 700 }) {
+export default function HeroSection({ offset = 1200 }) {
   const { scrollY } = useScroll();
 
   // Use useTransform directly without useMemo
@@ -59,7 +59,7 @@ export default function HeroSection({ offset = 700 }) {
         />
       </motion.div>
 
-      <div className = 'fixed text-3.8xl top-[16.9rem] right-[2.5rem] text-right'>
+      <div className = ' hidden fixed text-3.8xl top-[16.9rem] right-[2.5rem] text-right'>
       <ul className="leading-9">
           <motion.li
             style={{
@@ -91,7 +91,7 @@ export default function HeroSection({ offset = 700 }) {
 
       <div className="fixed left-0 right-0 bottom-10 w-full m-auto">
         <motion.h1
-          className="text-responsive-h1 block m-auto ml-[450px]"
+          className=" md:text-responsivem-h1 lg:text-responsive-h1 block m-auto md:ml-96 lg:ml-[450px]"
           style={{
             opacity: opacity,
             x: moveRight,
@@ -102,7 +102,7 @@ export default function HeroSection({ offset = 700 }) {
         </motion.h1>
 
         <motion.span
-          className="text-responsive-span block m-auto absolute right-52 top-44"
+          className=" md:text-responsivem-span text-responsive-span block fixed custom-margin bottom-10"
           style={{
             opacity: opacity,
             x: moveDown,
