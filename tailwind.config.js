@@ -7,12 +7,12 @@ module.exports = {
   ],
   theme: {
     extend: {
-      fill: {
-        'custom-gray': 'rgb(41, 41, 41)', // Add your custom fill color
-      },
       backgroundColor: {
         "main": "#343434",
         'custom-gray': 'rgb(41, 41, 41)',
+      },
+      fill: {
+        'custom-gray': 'rgb(41, 41, 41)', // Add your custom fill color
       },
       fontSize: {
         'md': '16px',
@@ -23,9 +23,16 @@ module.exports = {
         "4.0": "40px",
         "5.4xl": "54px",
         'responsive-h1': 'clamp(148px, 12vw, 162px)',
-        'responsivem-h1': 'clamp(120px, 8vw, 148px)',
-        'responsive-span': 'clamp(48px, 4vw, 54px)',
-        'responsivem-span': 'clamp(36px, 3vw, 48px)',
+        'responsivem-h1': 'clamp(115px, 15vw, 148px)',
+        'responsive-span': 'clamp(36px, 3vw, 48px)',
+      },
+      objectPosition: {
+        'left-center': 'left center',
+      },
+      padding: {
+        '500vh': '500vh',
+        '400vh': '400vh',
+        '70vh' : '70vh',
       },
     },
   },

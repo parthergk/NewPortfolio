@@ -1,10 +1,25 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import Image from "next/image";
-import heroImage from "../public/img.png"; // Ensure image is in the public folder
+import heroImageDesktop from "../public/pcbg.png"; // Desktop image
+import heroImageMobile from "../public/mbbg.png"; // Mobile and tablet image
+
 
 export default function HeroSection({ offset = 1200 }) {
   const { scrollY } = useScroll();
+  const [isDesktop, setIsDesktop] = useState(false);
+
+  // Update state based on window width
+  useEffect(() => {
+    const handleResize = () => {
+      setIsDesktop(window.innerWidth >= 1024); // Adjust breakpoint as needed
+    };
+
+    handleResize(); // Initial check
+    window.addEventListener("resize", handleResize);
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   // Use useTransform directly without useMemo
   const scale = useTransform(scrollY, [0, offset], [1, 5]);
@@ -39,27 +54,24 @@ export default function HeroSection({ offset = 1200 }) {
 
   return (
     <>
-      {/* Image Container */}
-      <motion.div
-        className="w-full fixed top-0 left-0 overflow-hidden z-0 flex"
-        style={{
-          opacity: opacity,
-          scale: scale,
-          y: moveDown,
-          height: "calc(var(--vh, 1vh) * 100)",
-          willChange: "transform, opacity",  // Hint to the browser for smoother animation
-        }}
+      <motion.div 
+      className=" flex items-end justify-center w-full h-screen fixed top-0 left-0 overflow-hidden "
+      style={{
+        opacity: opacity,
+        scale: scale,
+        y: moveDown,
+        willChange: "transform, opacity",  // Hint to the browser for smoother animation
+      }}
       >
-        {/* Optimized Image Component */}
         <Image
-          src={heroImage}
+          src={isDesktop ? heroImageDesktop : heroImageMobile}
           alt="Model"
-          priority // Load image with high priority
-          className="object-contain w-auto"
+          priority
+          className=" w-[145%] max-w-none object-contain object-center lg:w-full lg:h-full bottom-0 lg:object-cover lg:object-left-center opacity-100"
         />
       </motion.div>
 
-      <div className = ' hidden fixed text-3.8xl top-[16.9rem] right-[2.5rem] text-right'>
+      <div className = ' hidden lg:block fixed lg:text-3.8xl top-[16.9rem] right-[2.5rem] text-right z-10'>
       <ul className="leading-9">
           <motion.li
             style={{
@@ -85,15 +97,14 @@ export default function HeroSection({ offset = 1200 }) {
           >
             Twitter
           </motion.li>
-          <li className="fixed -right-[38px] top-[300px] -rotate-90">GitHub</li>
+          <li className=" fixed -right-[38px] top-[300px] -rotate-90">GitHub</li>
         </ul>
         </div>
 
-      <div className="fixed left-0 right-0 bottom-10 w-full m-auto">
+      <div className=" px-3 flex flex-col fixed left-0 right-0 responsive-top sm:responsive-top-tab w-full lg:m-auto lg:bottom-20 lg:px-0 lg:top-auto lg:block ">
         <motion.h1
-          className=" md:text-responsivem-h1 lg:text-responsive-h1 block m-auto md:ml-96 lg:ml-[450px]"
+          className=" text-8xl sm:text-[180px] lg:text-responsive-h1 block lg:m-auto lg:ml-[500px]"
           style={{
-            opacity: opacity,
             x: moveRight,
             willChange: "transform, opacity",  // Smoother transition
           }}
@@ -102,9 +113,8 @@ export default function HeroSection({ offset = 1200 }) {
         </motion.h1>
 
         <motion.span
-          className=" md:text-responsivem-span text-responsive-span block fixed custom-margin bottom-10"
+          className=" text-3.2xl sm:text-[64px] self-end lg:text-responsive-span lg:block lg:fixed lg:custom-margin lg:bottom-10"
           style={{
-            opacity: opacity,
             x: moveDown,
             willChange: "transform, opacity",  // Smoother transition
           }}
