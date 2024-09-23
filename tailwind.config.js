@@ -8,7 +8,7 @@ module.exports = {
   theme: {
     extend: {
       backgroundColor: {
-        "main": "#343434",
+        "main": "#363636",
         'custom-gray': 'rgb(41, 41, 41)',
       },
       fill: {

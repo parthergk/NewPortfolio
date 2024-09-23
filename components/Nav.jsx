@@ -6,16 +6,35 @@ import { menuSlide } from "@/lib/anim"; // Assuming menuSlide is defined in lib/
 
 const Nav = memo(({ isMobile, setIsActive }) => {
   const NavComponent = isMobile ? motion.nav : "nav";
+  const sectionOffsets = {
+    
+    Service: 2370,
+    Project: 3200,
+    About: 4300,
+    
+    //Tab
+
+    // Service: 2370,
+    // Project: 3200,
+    // About: 4300,
+    
+    //Desktop
+    
+    // Service: 1470,
+    // Project: 2120,
+    // About: 2755,
+  };
 
   const handleScroll = (e, sectionId) => {
     e.preventDefault();
     const section = document.getElementById(sectionId);
+
     if (section) {
-      // service : 1470, Project: 2100 about: 2500 
-      const offsetTop = section.offsetTop - 1470; // Adjust 50px offset if needed
+      const offsetAdjust = sectionOffsets[sectionId]
+      const offsetTop = section.offsetTop - offsetAdjust; // Adjust 50px offset if needed
       window.scrollTo({
         top: offsetTop,
-        behavior: 'smooth',
+        behavior: "smooth",
       });
     }
 

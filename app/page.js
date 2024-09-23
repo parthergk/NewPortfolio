@@ -5,8 +5,6 @@ import { AnimatePresence } from "framer-motion";
 import { usePathname } from "next/navigation";
 import HeroSection from "@/components/HeroSection";
 import Main from "@/components/Main";
-import Footer from "@/components/Footer";
-
 
 // Dynamically importing Nav to optimize performance
 const DynamicNav = dynamic(() => import("@/components/Nav"), { ssr: false });
@@ -49,23 +47,25 @@ export default function Home() {
     <>
       <header className="fixed top-0 left-0 w-full z-10 flex justify-between pt-6 px-3">
         <div className="text-3.2xl lg:text-4xl text-white font-light">Gk</div>
-        <button onClick={toggleMenu} className="sm:hidden z-20">
+        
+        <button onClick={toggleMenu} className="sm:hidden z-20" aria-expanded={isActive}>
+          <span className="sr-only">{isActive ? "Close Menu" : "Open Menu"}</span>
           <div className="w-full text-3.2xl">{isActive ? "close" : "menu"}</div>
         </button>
 
-        {isMobile && (
+
+        {isMobile ? (
           <AnimatePresence mode="wait">
             {isActive && (
               <DynamicNav isMobile={isMobile} setIsActive={setIsActive} />
             )}
           </AnimatePresence>
+        ) : (
+          <DynamicNav isMobile={isMobile} />
         )}
-        {!isMobile && <DynamicNav isMobile={isMobile} />}
       </header>
-      {/* Sections */}
-
-        <HeroSection />
-        <Main/>
+      <HeroSection />
+      <Main />
     </>
-  )
+  );
 }

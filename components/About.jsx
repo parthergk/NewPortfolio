@@ -1,5 +1,5 @@
 import React from "react";
-
+import Link from "next/link";
 const About = () => {
   return (
     <div className="lg:pr-8">
@@ -40,10 +40,10 @@ const About = () => {
         <div>
           <h5 className="mb-1 md:mb-3">Socials</h5>
           <ul className="flex gap-3 md:gap-5">
-            <li>GitHub</li>
-            <li>Instagram</li>
-            <li>Twitter</li>
-            <li>LinkedIn</li>
+            <li><Link  href="https://github.com/gaurav5xy">GitHub</Link></li>
+            <li><Link href="https://www.instagram.com/gauravkumar_pg/">Instagram</Link></li>
+            <li><Link href="https://x.com/Code_With_Art">Twitter</Link></li>
+            <li><Link href="https://www.linkedin.com/in/gaurav-kumar-b5a76626b">Linkedin</Link></li>
           </ul>
         </div>
       </div>

@@ -154,7 +154,7 @@ const Main = () => {
                 <div className=" px-4 md:px-5 pt-6 flex">
                   <div className=" w-full grid grid-cols-1 md:grid-cols-2 gap-4">
                     {projectData.map((project, index) => {
-                      return <ProjectMob project={project} index={index} />;
+                      return <ProjectMob key={index} project={project} index={index} />;
                     })}
                   </div>
                 </div>

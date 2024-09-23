@@ -3,28 +3,65 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import Image from "next/image";
 import heroImageDesktop from "../public/pcbg.png"; // Desktop image
 import heroImageMobile from "../public/mbbg.png"; // Mobile and tablet image
+import Link from "next/link";
 
 export default function HeroSection({ offset = 1200 }) {
   const { scrollY } = useScroll();
   const [isDesktop, setIsDesktop] = useState(false);
 
   useEffect(() => {
-    // Function to check if the current window width is for a desktop screen
     const checkIsDesktop = () => {
-      setIsDesktop(window.innerWidth >= 1024); // Adjust breakpoint as needed
+      setIsDesktop(window.innerWidth >= 1024);
+      const vh = window.innerHeight * 0.01;
+      document.documentElement.style.setProperty("--vh", `${vh}px`);
     };
-
-    // Initial check when component mounts
+  
     checkIsDesktop();
-
-    // Event listener for window resizing
     window.addEventListener("resize", checkIsDesktop);
-
-    // Clean up the event listener on component unmount
+  
     return () => {
       window.removeEventListener("resize", checkIsDesktop);
     };
   }, []);
+  
+
+  // useEffect(() => {
+  //   // Function to check if the current window width is for a desktop screen
+  //   const checkIsDesktop = () => {
+  //     setIsDesktop(window.innerWidth >= 1024); // Adjust breakpoint as needed
+  //   };
+
+
+  //   // Initial check when component mounts
+  //   checkIsDesktop();
+
+  //   // Event listener for window resizing
+  //   window.addEventListener("resize", checkIsDesktop);
+
+  //   // Clean up the event listener on component unmount
+  //   return () => {
+  //     window.removeEventListener("resize", checkIsDesktop);
+  //   };
+  // }, []);
+
+    // useEffect(() => {
+  //   // Calculate and set the --vh custom property on load and resize
+  //   const setVh = () => {
+  //     const vh = window.innerHeight * 0.01;
+  //     document.documentElement.style.setProperty("--vh", `${vh}px`);
+  //   };
+
+  //   // Set --vh on load
+  //   setVh();
+
+  //   // Recalculate --vh on window resize
+  //   window.addEventListener("resize", setVh);
+
+  //   // Cleanup the event listener on component unmount
+  //   return () => {
+  //     window.removeEventListener("resize", setVh);
+  //   };
+  // }, []);
 
   // Use useTransform directly without useMemo
   const scale = useTransform(scrollY, [0, offset], [1, 5]);
@@ -36,25 +73,6 @@ export default function HeroSection({ offset = 1200 }) {
   const moveNavInstagram = useTransform(scrollY, [0, offset], [0, 200]); // Additional move for Instagram
   const moveNavLinkedin = useTransform(scrollY, [0, offset], [0, 400]); // Additional move for LinkedIn
   const moveNavTwitter = useTransform(scrollY, [0, offset], [0, 600]); // Additional move for Twitter
-
-  useEffect(() => {
-    // Calculate and set the --vh custom property on load and resize
-    const setVh = () => {
-      const vh = window.innerHeight * 0.01;
-      document.documentElement.style.setProperty("--vh", `${vh}px`);
-    };
-
-    // Set --vh on load
-    setVh();
-
-    // Recalculate --vh on window resize
-    window.addEventListener("resize", setVh);
-
-    // Cleanup the event listener on component unmount
-    return () => {
-      window.removeEventListener("resize", setVh);
-    };
-  }, []);
 
   return (
     <>
@@ -73,6 +91,7 @@ export default function HeroSection({ offset = 1200 }) {
           priority
           className="w-[145%] max-w-none object-contain object-center lg:w-full lg:h-full bottom-0 lg:object-cover lg:object-left-center opacity-100"
         />
+
       </motion.div>
 
       <div className="hidden lg:block fixed lg:text-3.8xl top-[16.9rem] right-[2.5rem] text-right z-10">
@@ -83,7 +102,7 @@ export default function HeroSection({ offset = 1200 }) {
               willChange: "transform, opacity", // Smoother transition
             }}
           >
-            Instagram
+            <Link href="https://www.instagram.com/gauravkumar_pg/" aria-label="Instagram Profile">Instagram</Link>
           </motion.li>
           <motion.li
             style={{
@@ -91,7 +110,7 @@ export default function HeroSection({ offset = 1200 }) {
               willChange: "transform, opacity", // Smoother transition
             }}
           >
-            Linkedin
+            <Link href="https://www.linkedin.com/in/gaurav-kumar-b5a76626b" aria-label="Linkedin Profile">Linkedin</Link>
           </motion.li>
           <motion.li
             style={{
@@ -99,14 +118,17 @@ export default function HeroSection({ offset = 1200 }) {
               willChange: "transform, opacity", // Smoother transition
             }}
           >
-            Twitter
+            <Link href="https://x.com/Code_With_Art" aria-label="Twitter Profile">Twitter</Link>
           </motion.li>
-          <li className="fixed -right-[38px] top-[300px] -rotate-90">GitHub</li>
+          <li className="fixed -right-[38px] top-[300px] -rotate-90">
+            <Link  href="https://github.com/gaurav5xy" aria-label="GitHub Profile">GitHub</Link>
+          </li>
         </ul>
       </div>
 
       <div className="px-3 flex flex-col fixed left-0 right-0 responsive-top sm:responsive-top-tab w-full lg:m-auto lg:bottom-20 lg:px-0 lg:top-auto lg:block">
         <motion.h1
+          aria-label="Creative"
           className="text-8xl sm:text-[180px] lg:text-responsive-h1 block lg:m-auto lg:ml-[500px]"
           style={{
             x: moveRight,
