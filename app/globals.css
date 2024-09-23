@@ -39,6 +39,14 @@ body {
   top: clamp(48px, calc((100vh - 1024px) * (112 - 48) / (1180 - 1024) + 48px), 112px);
 }
 
+.project:hover h2{
+  transform: translateX(-10px);
+}
+
+.project:hover p{
+  transform: translateX(10px);
+}
+
 }
 
 

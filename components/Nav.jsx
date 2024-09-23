@@ -11,7 +11,12 @@ const Nav = memo(({ isMobile, setIsActive }) => {
     e.preventDefault();
     const section = document.getElementById(sectionId);
     if (section) {
-      section.scrollIntoView({ behavior: "smooth" });
+      // service : 1470, Project: 2100 about: 2500 
+      const offsetTop = section.offsetTop - 1470; // Adjust 50px offset if needed
+      window.scrollTo({
+        top: offsetTop,
+        behavior: 'smooth',
+      });
     }
 
     // Close the mobile menu after clicking a link

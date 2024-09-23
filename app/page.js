@@ -5,6 +5,7 @@ import { AnimatePresence } from "framer-motion";
 import { usePathname } from "next/navigation";
 import HeroSection from "@/components/HeroSection";
 import Main from "@/components/Main";
+import Footer from "@/components/Footer";
 
 
 // Dynamically importing Nav to optimize performance

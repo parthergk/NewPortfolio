@@ -34,6 +34,15 @@ module.exports = {
         '400vh': '400vh',
         '70vh' : '70vh',
       },
+      translate: {
+        '-2.5': '-10px', // Custom value for -10px translation
+      },
+      transitionDuration: {
+        '400': '400ms', // Custom duration for 0.4s
+      },
+      transitionTimingFunction: {
+        'custom-bezier': 'cubic-bezier(0.76, 0, 0.24, 1)',
+      },
     },
   },
   plugins: [],
