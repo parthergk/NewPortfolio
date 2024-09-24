@@ -35,32 +35,29 @@ const Main = () => {
   }, []);
 
   const skewScrolling = () => {
-    if (windowWidth) {
-      skewConfigs.current = window.scrollY;
-      skewConfigs.previous +=
-        (skewConfigs.current - skewConfigs.previous) * skewConfigs.ease;
-      skewConfigs.rounded = Math.round(skewConfigs.previous * 100) / 100;
+    skewConfigs.current = window.scrollY;
+    skewConfigs.previous += (skewConfigs.current - skewConfigs.previous) * skewConfigs.ease;
+    skewConfigs.rounded = Math.round(skewConfigs.previous * 100) / 100;
 
-      const difference = skewConfigs.current - skewConfigs.rounded;
-      const acceleration = difference / windowWidth;
-      const velocity = +acceleration;
-      const skew = velocity * 7.5;
+    const difference = skewConfigs.current - skewConfigs.rounded;
+    const acceleration = difference / 500; // Use a fixed value instead of windowWidth
+    const velocity = +acceleration;
+    const skew = velocity * 7.5;
 
-      const smoothScrollEl = smoothScroll.current;
+    const smoothScrollEl = smoothScroll.current;
 
-      if (smoothScroll.current) {
-        smoothScrollEl.style.transform = `translate3d(0, -${skewConfigs.rounded}px, 0)`;
-      }
-
-      // Apply skew to each section individually
-      skewScrollRef.current.forEach((ref) => {
-        if (ref) {
-          ref.style.transform = `skewY(${skew}deg)`;
-        }
-      });
-
-      animationFrameId.current = requestAnimationFrame(skewScrolling);
+    if (smoothScrollEl) {
+      smoothScrollEl.style.transform = `translate3d(0, -${skewConfigs.rounded}px, 0)`;
     }
+
+    // Apply skew to each section individually
+    skewScrollRef.current.forEach((ref) => {
+      if (ref) {
+        ref.style.transform = `skewY(${skew}deg)`;
+      }
+    });
+
+    animationFrameId.current = requestAnimationFrame(skewScrolling);
   };
 
   useEffect(() => {
@@ -71,7 +68,7 @@ const Main = () => {
         cancelAnimationFrame(animationFrameId.current);
       }
     };
-  }, [windowWidth]);
+  }, []); // No dependency on windowWidth here
 
   const services = [
     {
@@ -107,10 +104,7 @@ const Main = () => {
   const [model, setModel] = useState({ active: false, index: 0 });
   return (
     <main className="w-full h-full px-3 z-0">
-      <div
-        ref={smoothScroll}
-        className=" w-full h-screen will-change-transform"
-      >
+      <div ref={smoothScroll} className=" w-full h-screen will-change-transform">
         <div className="pt-[470vh] w-full">
           <section
             ref={(el) => (skewScrollRef.current[0] = el)}
