@@ -29,23 +29,19 @@ const Nav = memo(({ isMobile, setIsActive }) => {
     };
   }, []);
 
-  // Define scroll offsets for each section and device type
-  const sectionOffsets = {
-    mobile: {
-      Service: 1720,
-      Project: 2300,
-      About: 3480,
-    },
-    tablet: {
-      Service: 2370,
-      Project: 3200,
-      About: 4300,
-    },
-    desktop: {
-      Service: 1470,
-      Project: 2120,
-      About: 2755,
-    }
+  // Calculate dynamic offset based on device height
+  const getDynamicOffset = (sectionId) => {
+    const height = window.innerHeight;
+
+    // Adjust the baseline offsets proportionally based on height
+    const baseOffsets = {
+      Service: 2.3,  
+      Project: 3.3,  
+      About: 4.3,    
+    };
+
+    // Return the proportional offset value
+    return baseOffsets[sectionId] * height;
   };
 
   // Handle scroll to section
@@ -54,8 +50,7 @@ const Nav = memo(({ isMobile, setIsActive }) => {
     const section = document.getElementById(sectionId);
 
     if (section) {
-      // Get offset based on device type and section
-      const offsetAdjust = sectionOffsets[deviceType][sectionId];
+      const offsetAdjust = getDynamicOffset(sectionId); // Calculate dynamic offset
       const offsetTop = section.offsetTop - offsetAdjust;
 
       // Smooth scroll to the calculated offset
@@ -79,7 +74,9 @@ const Nav = memo(({ isMobile, setIsActive }) => {
       exit={isMobile ? "exit" : undefined}
       className="bg-custom-gray sm:bg-transparent sm:relative sm:flex-none fixed top-0 left-0 right-0 bottom-0 flex justify-center items-center z-10"
     >
-      <ul className="sm:flex sm:space-x-5 text-white text-xl sm:text-2xl lg:text-3xl font-normal">
+      <ul
+      className="sm:flex sm:space-x-5 text-white text-5.4xl sm:text-3.2xl lg:text-3.8xl font-light"
+      >
         {["Service", "Project", "About"].map((item) => (
           <li key={item}>
             <Link href={`/#${item}`} onClick={(e) => handleScroll(e, item)}>
