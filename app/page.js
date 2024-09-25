@@ -50,7 +50,7 @@ export default function Home() {
         
         <button onClick={toggleMenu} className="sm:hidden z-20" aria-expanded={isActive}>
           <span className="sr-only">{isActive ? "Close Menu" : "Open Menu"}</span>
-          <div className="w-full text-3.2xl">{isActive ? "close" : "menu"}</div>
+          <div className="w-full text-3.2xl">{isActive ? "close" : "Menu"}</div>
         </button>
 
 
