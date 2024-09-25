@@ -4,6 +4,7 @@ import Project from "./Project";
 import Model from "./Model";
 import About from "./About";
 import ProjectMob from "./ProjectMob";
+import {services, projectData} from "@/lib/data";
 
 const Main = () => {
   const smoothScroll = useRef(null);
@@ -70,37 +71,6 @@ const Main = () => {
     };
   }, []); // No dependency on windowWidth here
 
-  const services = [
-    {
-      title: "Web design",
-      description:
-        "Visually stunning web designs that captivate your audience by blending your brand voice and customer needs.",
-    },
-    {
-      title: "Development",
-      description:
-        "Get custom web development solutions that are tailored to your specifications, designed to deliver a flawless user experience.",
-    },
-  ];
-
-  const projectData = [
-    {
-      title: "GoAssignr",
-      src: "format_Services_Page.png",
-      color: "#4F4F4F",
-    },
-    {
-      title: "priject3",
-      src: "home-item-6.jpg",
-      color: "#D65A31",
-    },
-    {
-      title: "priject4",
-      src: "home-item-8.jpg",
-      color: "#2A9D8F",
-    },
-  ];
-
   const [model, setModel] = useState({ active: false, index: 0 });
   return (
     <main className="w-full h-full px-3 z-0">
@@ -109,7 +79,7 @@ const Main = () => {
           <section
             ref={(el) => (skewScrollRef.current[0] = el)}
             id="Service"
-            className="will-change-transform pt-36 pb-70vh bg-[#343434]"
+            className="will-change-transform pt-36 pb-70vh bg-main"
           >
             <h1 className=" text-center lg:text-left text-4.0 md:text-[80px] font-semibold mb-10">
               How I Can Help
@@ -122,7 +92,7 @@ const Main = () => {
           <section
             ref={(el) => (skewScrollRef.current[1] = el)}
             id="Project"
-            className="will-change-transform pt-36 pb-70vh bg-[#343434]"
+            className="will-change-transform pt-36 pb-70vh bg-main"
           >
             <h1 className=" text-center lg:text-left text-4.0 md:text-[80px] font-semibold mb-10">
               Featured Projects
@@ -159,7 +129,7 @@ const Main = () => {
           <section
             ref={(el) => (skewScrollRef.current[2] = el)}
             id="About"
-            className="will-change-transform pt-36 pb-5 md:pb-10 bg-[#343434]"
+            className="will-change-transform pt-36 pb-5 md:pb-10 bg-main"
           >
             <h1 className=" text-center lg:text-left text-4.0 md:text-[80px] font-semibold mb-10">
               Who I Am
