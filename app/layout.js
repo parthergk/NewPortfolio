@@ -1,38 +1,41 @@
 import { Cormorant_Garamond } from "next/font/google";
 import "./globals.css";
 
-// Import Playfair Display font with appropriate subsets
 const cormorantgaramond = Cormorant_Garamond({
   subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700"],
 });
 
 export const metadata = {
-  title: "Gaurav Kumar's Portfolio",
-  description: "Showcasing the projects and skills of Gaurav Kumar, a web developer.",
+  title: "Parther • Freelance Designer & Developer",
+  description: "I am a web developer and designer, specializing in creating interactive websites and SaaS platforms. As a freelancer, I focus on delivering user-friendly and engaging digital solutions tailored to meet client needs.",
   charset: "UTF-8",
   robots: "index, follow",
-  author: "Gaurav Kumar",
+  author: "Parther",
+  
+  metadataBase: new URL('https://parther.in'),
+
   openGraph: {
-    title: "Gaurav Kumar's Portfolio",
-    description: "Showcasing the projects and skills of Gaurav Kumar, a web developer.",
-    // metadataBase: new URL('https://next-learn-dashboard.vercel.sh'),
-    url: "https://bogibogi.vercel.app", // Replace with your website URL
+    title: "Parther • Freelance Designer & Developer",
+    description: "As a freelancer, I focus on delivering user-friendly and engaging digital solutions tailored to meet client needs.",
+    url: "https://parther.in",
+    siteName: 'Parther',
     images: [
       {
-        url: "/pcbg.png", // Replace with the correct image path
+        url: "/title.png",
         width: 1200,
         height: 630,
-        alt: "Gaurav Kumar's Portfolio",
+        alt: "Parther",
       },
     ],
-    type: "website",
+    locale: 'en_US',
+    type: 'website',
   },
   twitter: {
     card: "summary_large_image",
-    title: "Gaurav Kumar's Portfolio",
-    description: "Showcasing the projects and skills of Gaurav Kumar, a web developer.",
-    images: ["/pcbg.png"], // Replace with the correct image path
+    title: "Parther • Freelance Designer & Developer",
+    description: "As a freelancer, I focus on delivering user-friendly and engaging digital solutions tailored to meet client needs.",
+    images: ["/title.png"],
   },
 };
 
@@ -40,6 +43,7 @@ export const viewport = {
   width: "device-width",
   initialScale: 1,
 };
+
 
 export default function RootLayout({ children }) {
   return (
