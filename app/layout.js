@@ -13,12 +13,12 @@ export const metadata = {
   robots: "index, follow",
   author: "Parther",
   
-  metadataBase: new URL('https://parther.in'),
+  metadataBase: new URL('https://bogibogi.vercel.app'),
 
   openGraph: {
     title: "Parther • Freelance Designer & Developer",
     description: "As a freelancer, I focus on delivering user-friendly and engaging digital solutions tailored to meet client needs.",
-    url: "https://parther.in",
+    url: "https://bogibogi.vercel.app",
     siteName: 'Parther',
     images: [
       {
