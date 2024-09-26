@@ -22,7 +22,7 @@ export const metadata = {
     siteName: 'Parther',
     images: [
       {
-        url: "/title.png",
+        url: "/pcbg.png",
         width: 1200,
         height: 630,
         alt: "Parther",
@@ -35,7 +35,7 @@ export const metadata = {
     card: "summary_large_image",
     title: "Parther • Freelance Designer & Developer",
     description: "As a freelancer, I focus on delivering user-friendly and engaging digital solutions tailored to meet client needs.",
-    images: ["/title.png"],
+    images: ["/pcbg.png"],
   },
 };
 
