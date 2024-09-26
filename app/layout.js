@@ -8,7 +8,8 @@ const cormorantgaramond = Cormorant_Garamond({
 
 export const metadata = {
   title: "Parther • Freelance Designer & Developer",
-  description: "I am a web developer and designer, specializing in creating interactive websites and SaaS platforms. As a freelancer, I focus on delivering user-friendly and engaging digital solutions tailored to meet client needs.",
+  description: "I am a freelance web developer and designer specializing in creating interactive websites and SaaS platforms. As a freelancer, I focus on Delivering user-friendly and engaging digital solutions.",
+
   charset: "UTF-8",
   robots: "index, follow",
   author: "Parther",
@@ -17,7 +18,7 @@ export const metadata = {
 
   openGraph: {
     title: "Parther • Freelance Designer & Developer",
-    description: "As a freelancer, I focus on delivering user-friendly and engaging digital solutions tailored to meet client needs.",
+    description: "As a freelancer, I focus on Delivering user-friendly and engaging digital solutions.",
     url: "https://bogibogi.vercel.app",
     siteName: 'Parther',
     images: [
@@ -34,7 +35,7 @@ export const metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Parther • Freelance Designer & Developer",
-    description: "As a freelancer, I focus on delivering user-friendly and engaging digital solutions tailored to meet client needs.",
+    description: "As a freelancer, I focus on Delivering user-friendly and engaging digital solutions.",
     images: ["/title.png"],
   },
 };
@@ -42,6 +43,19 @@ export const metadata = {
 export const viewport = {
   width: "device-width",
   initialScale: 1,
+};
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: 'Parther Portfolio',
+  description: 'Parther is a freelance web developer and designer specializing in creating interactive websites and SaaS platforms.',
+  url: 'https://parther.in',
+  image: 'https://parther.in/title.png', // Replace with your site image URL
+  sameAs: [
+    'https://linkedin.com/in/your-profile', // Replace with your LinkedIn profile
+    'https://twitter.com/your-profile', // Replace with your Twitter profile
+  ],
 };
 
 
@@ -60,6 +74,10 @@ export default function RootLayout({ children }) {
       </head>
       <body className={`${cormorantgaramond.className}  bg-main overflow-auto no-scrollbar`}>
         {children}
+        <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       </body>
     </html>
   );

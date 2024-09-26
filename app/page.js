@@ -46,7 +46,7 @@ export default function Home() {
   return (
     <>
       <header className="fixed top-0 left-0 w-full z-10 flex justify-between pt-6 px-3">
-        <div className="text-3.2xl lg:text-4xl text-white ">Bogi Bogi</div>
+        <div className="text-3.2xl lg:text-4xl text-white ">Parther</div>
         
         <button onClick={toggleMenu} className="sm:hidden z-20" aria-expanded={isActive}>
           <span className="sr-only">{isActive ? "Close Menu" : "Open Menu"}</span>
