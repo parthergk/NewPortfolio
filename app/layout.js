@@ -14,12 +14,12 @@ export const metadata = {
   robots: "index, follow",
   author: "Parther",
   
-  metadataBase: new URL('https://bogibogi.vercel.app'),
+  metadataBase: new URL('https://parther.in'),
 
   openGraph: {
     title: "Parther • Freelance Designer & Developer",
     description: "As a freelancer, I focus on Delivering user-friendly and engaging digital solutions.",
-    url: "https://bogibogi.vercel.app",
+    url: "https://parther.in",
     siteName: 'Parther',
     images: [
       {
@@ -53,8 +53,8 @@ const jsonLd = {
   url: 'https://parther.in',
   image: 'https://parther.in/title.png', // Replace with your site image URL
   sameAs: [
-    'https://linkedin.com/in/your-profile', // Replace with your LinkedIn profile
-    'https://twitter.com/your-profile', // Replace with your Twitter profile
+    // 'https://linkedin.com/in/your-profile', // Replace with your LinkedIn profile
+    'https://x.com/parther_gk', // Replace with your Twitter profile
   ],
 };
 
