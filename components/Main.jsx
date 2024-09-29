@@ -108,6 +108,7 @@ const Main = () => {
                         key={index}
                         index={index}
                         title={project.title}
+                        href={project.href}
                         setModel={setModel}
                       />
                     );
