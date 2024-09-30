@@ -23,7 +23,7 @@ export const metadata = {
     siteName: 'Parther',
     images: [
       {
-        url: "/title.png",
+        url: "https://parther.in/title.png", // Updated to absolute URL
         width: 1200,
         height: 630,
         alt: "Parther",
@@ -36,7 +36,7 @@ export const metadata = {
     card: "summary_large_image",
     title: "Parther • Freelance Designer & Developer",
     description: "As a freelancer, I focus on Delivering user-friendly and engaging digital solutions.",
-    images: ["/title.png"],
+    images: ["https://parther.in/title.png"], // Updated to absolute URL
   },
 };
 
@@ -48,15 +48,15 @@ export const viewport = {
 const jsonLd = {
   '@context': 'https://schema.org',
   '@type': 'WebSite',
-  name: 'Parther Portfolio',
+  name: 'Parther',
   description: 'Parther is a freelance web developer and designer specializing in creating interactive websites and SaaS platforms.',
   url: 'https://parther.in',
-  image: 'https://parther.in/title.png', // Replace with your site image URL
+  image: 'https://parther.in/title.png', // Absolute URL for JSON-LD as well
   sameAs: [
-    // 'https://linkedin.com/in/your-profile', // Replace with your LinkedIn profile
     'https://x.com/parther_gk', // Replace with your Twitter profile
   ],
 };
+
 
 
 export default function RootLayout({ children }) {
