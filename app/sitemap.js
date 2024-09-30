@@ -7,7 +7,7 @@ export default function sitemap() {
       priority: 1,
       images: [
         {
-          url: 'https://parther.in/title.png',
+          url: 'https://parther.in/social-img.png',
           caption: 'Parther logo image',
         },
       ],
