@@ -22,7 +22,7 @@ export const metadata = {
     siteName: "Parther",
     images: [
       {
-        url: "https://parther.in/social-img.png",
+        url: "https://parther.in/parther.png",
         width: 1200,
         height: 630,
         alt: "Parther",
@@ -36,7 +36,7 @@ export const metadata = {
     title: "Parther - Freelance Designer & Developer",
     description:
       "As a freelancer, I focus on delivering user-friendly and engaging digital solutions.",
-    images: ["https://parther.in/social-img.png"],
+    images: ["https://parther.in/parther.png"],
   },
 };
 
@@ -52,10 +52,12 @@ const jsonLd = {
   description:
     "Parther is a freelance web developer and designer specializing in creating interactive websites and SaaS platforms.",
   url: "https://parther.in",
-  image: "https://parther.in/social-img.png",
-  logo: "https://parther.in/social-img.png", // Ensure you provide the correct logo URL
+  image: "https://parther.in/parther.png",
+  logo: "https://parther.in/parther.png", // Ensure you provide the correct logo URL
   sameAs: [
-    "https://x.com/parther_gk", // Replace with your actual social media profiles
+    "https://github.com/parthergk",
+    "https://x.com/parther_gk",
+    "https://www.linkedin.com/in/gaurav-kumar-b5a76626b",
   ],
   author: {
     "@type": "Person",
