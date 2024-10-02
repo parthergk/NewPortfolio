@@ -102,7 +102,7 @@ export default function HeroSection({ offset = 1200 }) {
               willChange: "transform, opacity", // Smoother transition
             }}
           >
-            <Link href="https://www.instagram.com/gauravkumar_pg/" aria-label="Instagram Profile">Instagram</Link>
+            <Link href="https://www.instagram.com/parther_gk/" aria-label="Instagram Profile">Instagram</Link>
           </motion.li>
           <motion.li
             style={{
@@ -118,10 +118,10 @@ export default function HeroSection({ offset = 1200 }) {
               willChange: "transform, opacity", // Smoother transition
             }}
           >
-            <Link href="https://x.com/Code_With_Art" aria-label="Twitter Profile">Twitter</Link>
+            <Link href="https://x.com/parther_gk" aria-label="Twitter Profile">Twitter</Link>
           </motion.li>
           <li className="fixed -right-[38px] top-[300px] -rotate-90">
-            <Link  href="https://github.com/gaurav5xy" aria-label="GitHub Profile">GitHub</Link>
+            <Link  href="https://github.com/parthergk" aria-label="GitHub Profile">GitHub</Link>
           </li>
         </ul>
       </div>

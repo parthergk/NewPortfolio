@@ -40,8 +40,8 @@ const About = () => {
         <div>
           <h5 className="mb-1 md:mb-3">Socials</h5>
           <ul className="flex gap-3 md:gap-5">
-            <li><Link  href="https://github.com/gaurav5xy">GitHub</Link></li>
-            <li><Link href="https://www.instagram.com/gauravkumar_pg/">Instagram</Link></li>
+            <li><Link  href="https://github.com/parthergk">GitHub</Link></li>
+            <li><Link href="https://www.instagram.com/parther_gk">Instagram</Link></li>
             <li><Link href="https://x.com/parther_gk">Twitter</Link></li>
             <li><Link href="https://www.linkedin.com/in/gaurav-kumar-b5a76626b">Linkedin</Link></li>
           </ul>
