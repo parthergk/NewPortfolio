@@ -81,7 +81,7 @@ const Main = () => {
             id="Service"
             className="will-change-transform pt-36 pb-70vh bg-main"
           >
-            <h1 className=" text-center lg:text-left text-4.0 md:text-[80px] font-semibold mb-10">
+            <h1 className=" text-center lg:text-left text-4.0 md:text-[80px] font-semibold mb-6 md:mb-10">
               How I Can Help
             </h1>
             {services.map((service) => (

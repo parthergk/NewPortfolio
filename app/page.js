@@ -64,7 +64,7 @@ export default function Home() {
           <DynamicNav isMobile={isMobile} />
         )}
       </header>
-      <HeroSection />
+      <HeroSection/>
       <Main />
     </>
   );

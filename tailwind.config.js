@@ -7,6 +7,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      screens: {
+        'xl-h800': { 'raw': '(min-width: 1280px) and (min-height: 800px)' }, // Custom screen with width and height constraint
+      },
       backgroundColor: {
         "main": "#363636",
         'custom-gray': 'rgb(41, 41, 41)',
@@ -22,7 +25,7 @@ module.exports = {
         "3.8xl": "38px",
         "4.0": "40px",
         "5.4xl": "54px",
-        'responsive-h1': 'clamp(148px, 12vw, 162px)',
+        'responsive-h1': 'clamp(148px, 14vw, 180px)',
         'responsivem-h1': 'clamp(115px, 15vw, 148px)',
         'responsive-span': 'clamp(36px, 3vw, 48px)',
       },
@@ -45,5 +48,6 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  plugins: [
+  ],
 };
