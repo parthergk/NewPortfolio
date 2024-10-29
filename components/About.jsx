@@ -3,17 +3,18 @@ import Link from "next/link";
 const About = () => {
   return (
     <div className="lg:pr-8">
-      
       <div className="border-t h-1 border-gray-300"></div>
       <div className=" pt-6 md:pt-10 lg:pt-12 pb-12 px-4 md:px-5">
         <h2 className="text-[28px] md:text-5.4xl font-medium ">
           Web Developer & Designer
         </h2>
         <p className="text-lg md:text-3.2xl font-normal md:leading-10 pt-3 md:pt-5 lg:pt-6">
-          I’m Gaurav Kumar, a passionate web developer and designer dedicated to
-          creating visually appealing and user-centric digital experiences. With
-          a blend of creativity and technical expertise, I transform ideas into
-          impactful web solutions.
+          Hi, I’m Parther, a BCA graduate and passionate web developer. I
+          specialize in crafting visually appealing, user-centric digital
+          experiences that truly resonate. With a strong background in frontend
+          development using React.js and Next.js, I love turning complex
+          challenges into elegant solutions, all while adding my own creative
+          touch to each project.
         </p>
       </div>
 
@@ -40,10 +41,20 @@ const About = () => {
         <div>
           <h5 className="mb-1 md:mb-3">Socials</h5>
           <ul className="flex gap-3 md:gap-5">
-            <li><Link  href="https://github.com/parthergk">GitHub</Link></li>
-            <li><Link href="https://www.instagram.com/parther_gk">Instagram</Link></li>
-            <li><Link href="https://x.com/parther_gk">Twitter</Link></li>
-            <li><Link href="https://www.linkedin.com/in/gaurav-kumar-b5a76626b">Linkedin</Link></li>
+            <li>
+              <Link href="https://github.com/parthergk">GitHub</Link>
+            </li>
+            <li>
+              <Link href="https://www.instagram.com/parther_gk">Instagram</Link>
+            </li>
+            <li>
+              <Link href="https://x.com/parther_gk">Twitter</Link>
+            </li>
+            <li>
+              <Link href="https://www.linkedin.com/in/gaurav-kumar-b5a76626b">
+                Linkedin
+              </Link>
+            </li>
           </ul>
         </div>
       </div>
