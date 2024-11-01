@@ -1,5 +1,7 @@
 import { Cormorant_Garamond } from "next/font/google";
 import "./globals.css";
+import { Analytics } from '@vercel/analytics/react';
+
 
 const cormorantgaramond = Cormorant_Garamond({
   subsets: ["latin"],
@@ -121,6 +123,7 @@ export default function RootLayout({ children }) {
         className={`${cormorantgaramond.className}  bg-main overflow-auto no-scrollbar`}
       >
         {children}
+        <Analytics />
       </body>
     </html>
   );
