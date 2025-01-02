@@ -19,6 +19,7 @@ const Project = ({ index, title, href, setModel }) => {
   return (
     <>
       <Link
+      target="_blank"
         href={href}
         className={`project border-b flex w-full ${getJustifyClass(index)} items-center pt-6 pb-9 md:pt-9 md:pb-[50px] lg:pb-[70px] cursor-pointer transition-all duration-200 hover:opacity-[0.7]`}
         onMouseEnter={() => {
