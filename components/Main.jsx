@@ -4,13 +4,14 @@ import Project from "./Project";
 import Model from "./Model";
 import About from "./About";
 import ProjectMob from "./ProjectMob";
-import {services, projectData} from "@/lib/data";
+import { services, projectData } from "@/lib/data";
 
 const Main = () => {
   const smoothScroll = useRef(null);
   const skewScrollRef = useRef([]); // Array of refs for each section
   const animationFrameId = useRef(null);
   const [windowWidth, setWindowWidth] = useState(null);
+  // const [windowHeight, setWindowHeight] = useState(null);
 
   const skewConfigs = {
     ease: 0.1,
@@ -22,6 +23,7 @@ const Main = () => {
   useEffect(() => {
     if (typeof window !== "undefined") {
       setWindowWidth(window.innerWidth);
+      // setWindowHeight(window.innerHeight);
 
       const handleResize = () => {
         setWindowWidth(window.innerWidth);
@@ -35,9 +37,30 @@ const Main = () => {
     }
   }, []);
 
+  // function blurScrolling() {
+  //   skewScrollRef.current.forEach((sectionRef) => {
+  //     if (sectionRef) {
+  //       const children = sectionRef.querySelectorAll("*");
+  
+  //       children.forEach((child) => {
+  //         const rect = child.getBoundingClientRect();
+  //         const distanceFromBottom = windowHeight - rect.top;
+  
+  //         if (distanceFromBottom >= 64 && distanceFromBottom >= 0) {
+  //           child.style.filter = "blur(5px)";
+  //         } else {
+  //           child.style.filter = "blur(0px)";
+  //         }
+  //       });
+  //     }
+  //   });
+  // }
+  
+
   const skewScrolling = () => {
     skewConfigs.current = window.scrollY;
-    skewConfigs.previous += (skewConfigs.current - skewConfigs.previous) * skewConfigs.ease;
+    skewConfigs.previous +=
+      (skewConfigs.current - skewConfigs.previous) * skewConfigs.ease;
     skewConfigs.rounded = Math.round(skewConfigs.previous * 100) / 100;
 
     const difference = skewConfigs.current - skewConfigs.rounded;
@@ -58,6 +81,8 @@ const Main = () => {
       }
     });
 
+    // blurScrolling();
+
     animationFrameId.current = requestAnimationFrame(skewScrolling);
   };
 
@@ -69,12 +94,15 @@ const Main = () => {
         cancelAnimationFrame(animationFrameId.current);
       }
     };
-  }, []); // No dependency on windowWidth here
+  }, []);
 
   const [model, setModel] = useState({ active: false, index: 0 });
   return (
-    <main className="w-full h-full px-3 z-0">
-      <div ref={smoothScroll} className=" w-full h-screen will-change-transform">
+    <main className="w-full h-full px-3 z-0 ">
+      <div
+        ref={smoothScroll}
+        className=" w-full h-screen will-change-transform"
+      >
         <div className="pt-[470vh] w-full">
           <section
             ref={(el) => (skewScrollRef.current[0] = el)}
@@ -119,7 +147,13 @@ const Main = () => {
                 <div className=" px-4 md:px-5 pt-6 flex">
                   <div className=" w-full grid grid-cols-1 md:grid-cols-2 gap-4">
                     {projectData.map((project, index) => {
-                      return <ProjectMob key={index} project={project} index={index} />;
+                      return (
+                        <ProjectMob
+                          key={index}
+                          project={project}
+                          index={index}
+                        />
+                      );
                     })}
                   </div>
                 </div>
